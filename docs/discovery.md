@@ -77,3 +77,41 @@ Status: Website-first visible result; the interviewer's proposed simultaneous pr
 ## Explicit repository request
 
 User asked to ensure findings are saved to GitHub, suggesting MyLifeBook as the name. Repository creation and documenting the ongoing interview are authorized now; the entire product design is not settled.
+
+## Round three
+
+### Q12: Sharing setup
+
+User: The server/static distinction was unclear. The project is for other people, so it must be shareable. Figure out the best formats and setup; use judgment.
+
+Status: Sharing outcome confirmed; implementation delegated. This does not select a specific host, server, authentication method, or static-only architecture.
+
+### Q13: Editing interface
+
+User: Do not overcomplicate it. It is text; do not invent Google Docs.
+
+Status: Keep authoring in ordinary files/existing tools; no custom document editor initially. Small future usability improvements remain possible.
+
+### Q14: Design perspectives
+
+User: Ask some agents what they would want if they were people making and filling out the collection for someone else.
+
+Action: Three agents supplied simulated perspectives: adult child preparing a parent's memoir, aunt making a coming-of-age gift, and family editor working with mixed documents/recordings/photos. See creator-perspectives.md. These are ideas, not independent user interviews or proof of demand.
+
+### Q15: Book output and prototype scope
+
+User: Website-first with an early print experiment sounds fine. Unsure which aspects need multiple prototypes, but include how the book feature could work.
+
+Interpretation: Show a plausible selected-content-to-book path early. Compare alternatives only where they answer meaningful uncertainties; do not require several full implementations or postpone every print consideration.
+
+### OpenSpec
+
+User wondered whether OpenSpec should have been used, but felt it was less important.
+
+Recommendation: Keep the plain Markdown record and focused prototype brief now. Revisit OpenSpec for concrete behavior changes if its workflow helps. It was researched but not installed or made mandatory.
+
+## Explicit implementation boundary
+
+The founder then stated: "I don't want you to start on the project right now!!!!"
+
+Action: stop at preserving planning notes and requested agent perspectives in GitHub. No application code, prototype, deployment, or autonomous development was started. Future implementation requires a later explicit request.

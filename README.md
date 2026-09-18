@@ -4,13 +4,15 @@ An open-source project for telling a person's life through facts, stories, photo
 
 **Status: discovery and planning.** There is no application yet. This repository preserves the founding conversation, research, decisions, and questions so development can continue with human or agent assistance.
 
+The founder explicitly requested that implementation not start now. All prototype ideas are future planning only.
+
 ## Direction
 
 - Fetch the project, run it locally, and make it your own.
 - Keep information flat, understandable, and portable. Agents may handle conversion and other heavy lifting.
 - Let creators choose their own structure, voice, and presentation. Chapters, links, and templates should help without becoming mandatory.
 - Accept different sources over time without making Obsidian or a proprietary editor mandatory.
-- Explore attractive websites and alternative designs. Book output is a desired capability whose initial scope is still open.
+- Explore attractive websites and focused design alternatives. Start with the website and include an early example of how selected content becomes a book.
 - Design for selective sharing, including the possibility of private material for closer relatives.
 
 Astro is the founder's preferred candidate, not a finalized architecture. Starlight is an option to evaluate, not a requirement.
@@ -22,6 +24,8 @@ Astro is the founder's preferred candidate, not a finalized architecture. Starli
 - [Decision tree and open questions](docs/decisions.md)
 - [Research and references](docs/research.md)
 - [Candidate experiments and milestones](docs/backlog.md)
+- [Simulated creator perspectives](docs/creator-perspectives.md)
+- [First prototype brief](docs/first-prototype.md)
 - [Future agent handoff](docs/agent-handoff.md)
 - [Agent working instructions](AGENTS.md)
 

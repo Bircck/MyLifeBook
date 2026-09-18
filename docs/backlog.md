@@ -1,11 +1,11 @@
 # Candidate experiments
 
-These are proposed bounded tasks for later assignment, not a committed implementation roadmap. Choose the first milestone after discovery resolves the relevant questions.
+These are proposed bounded tasks for later assignment, not a committed implementation roadmap. Q12-Q15 provide enough direction for first-prototype.md; remaining engineering questions can be investigated without a new preference questionnaire.
 
 | ID | Question | Deliverable | Evidence / stopping condition |
 | --- | --- | --- | --- |
 | R1 | What comparable products and websites offer useful patterns? | Dated source-backed comparison and annotated visual references | Specific takeaways for capture, reading, sharing, and print; distinguish unknowns |
-| D1 | Which presentation makes a life feel individual and worth reading? | Two or three distinct prototypes using the same fictional material | Mobile/desktop visual review, legibility and navigation evaluation, comparison rationale |
+| D1 | Which presentation makes a life feel individual and worth reading? | One primary experience and a focused alternate layout using identical material | Mobile/desktop visual review, legibility and navigation evaluation, comparison rationale; no need for several complete applications |
 | C1 | Can the content stay simple without forcing a life template? | Minimal proposed folder/content representation plus examples | Demonstrate an unstructured story, facts, optional chapter, image, link, and source without requiring life stages |
 | I1 | Can ordinary documents enter smoothly? | Small DOCX and Markdown import experiment, with originals retained | Photos/order/captions inspected; unsupported content reported; changed-source re-import does not silently erase local edits |
 | W1 | Does Astro suit the desired reading experience? | Locally runnable fictional life website | Clear setup, meaningful stories/photos, responsive UI, usable navigation and accessible reading |
@@ -15,7 +15,7 @@ These are proposed bounded tasks for later assignment, not a committed implement
 
 ## Candidate first visible milestone
 
-A polished website containing one fictional person's life information and stories, accompanied by alternative visual directions. This reflects Q11. Exact scope and whether a printable PDF belongs in this milestone remain open.
+A polished website containing one fictional person's life information and stories, one focused alternate layout, and an early example of selected content becoming a printable chapter. Q15 accepts website-first sequencing and asks that book behavior be included in the thinking. See first-prototype.md for suggested scope and evidence.
 
 ## Suggested future regression cases
 

@@ -62,3 +62,11 @@ Engineering implication: private content requires real access enforcement or an 
 - Practical shared-code or account-based protection, including media and generated search output.
 - Media longevity, external-link failure, and portable export.
 - Language requirements, including whether Danish and English are initial targets. Language support is not yet a user decision.
+
+## OpenSpec planning workflow
+
+Reviewed 2026-09-19 after the founder raised it. OpenSpec distinguishes specifications of current behavior from proposed changes. A change can contain a proposal, design, tasks, and requirement deltas. Its documentation also supports exploration before implementation.
+
+Primary source: https://github.com/Fission-AI/OpenSpec/blob/main/docs/overview.md
+
+Recommendation: the existing Markdown notes and a focused prototype brief are sufficient now. Consider OpenSpec later for concrete changes such as repeat-import behavior or private-content exclusion. Adoption is optional; it was not installed. This is a project-fit judgment, not a claim that OpenSpec requires heavyweight process.

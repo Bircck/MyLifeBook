@@ -24,6 +24,8 @@ Accept source material through multiple channels over time. Documents with embed
 
 Keeping originals and reviewing changes on re-import was tentatively accepted. Exact behavior remains dependent on supported formats and ease of use. A strict input template that blocks ordinary contributors is undesirable.
 
+Q13 explicitly reinforces simplicity: this is text, and the project should not invent Google Docs. Use existing authoring tools and agent assistance; a custom rich-text editing application is outside the initial direction.
+
 ### Media
 
 Potential inputs include physical-photo scans, digital photographs, documents, interviews, recordings, and other material. Keep the baseline lightweight. Large video is preferably stored externally; small playable audio recordings are a useful possibility. Initial supported formats and storage details are open.
@@ -34,11 +36,15 @@ The creator controls whether an interview is represented word for word, summariz
 
 ### Sharing
 
-Allow sharing a whole life collection or selected elements. One concrete scenario is a limited collection of stories for a funeral, with closer relatives able to access additional material, perhaps using a code. Long-term use may call for access controls. Separate editions versus one site with permissions remains unresolved.
+Allow sharing a whole life collection or selected elements. One concrete scenario is a limited collection of stories for a funeral, with closer relatives able to access additional material, perhaps using a code. Long-term use may call for access controls. In Q12 the founder delegated the choice of sharing format and setup: sharing with other people is essential, while implementation should be figured out through judgment and experiments. Do not repeatedly ask the founder to choose infrastructure.
+
+Working engineering direction: publish selected content at an ordinary shareable URL, omitting unselected material from that output. Investigate separately protected family collections with host/server-enforced access to pages and media. A shared code may suit a later experiment. This is a revisable recommendation, not a user-selected hosting or authentication system.
 
 ### Design quality
 
-The first visible success is an appealing website with information and stories about a person. Explore alternative prototypes and styles. Strongly consider frontend/design skills and research into good websites; no specific skill is compulsory. A printable PDF in the first milestone was proposed by the interviewer but not confirmed by the founder.
+The first visible success is an appealing website with information and stories about a person. Explore alternative prototypes and styles. Strongly consider frontend/design skills and research into good websites; no specific skill is compulsory. Q14 requested agent perspectives imagining people preparing a collection for someone else; these are speculative inputs, not user validation.
+
+In Q15 the founder accepted website-first work followed by an early print experiment, while wanting to include how book output could work. A full book-production system is not required in the first prototype. Multiple versions should answer concrete questions, not become several complete products. See first-prototype.md.
 
 ## Examples
 

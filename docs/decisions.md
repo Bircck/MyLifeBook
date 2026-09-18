@@ -2,6 +2,17 @@
 
 Updated 2026-09-19. Status terms: **confirmed**, **tentative**, **proposed**, **open**, **deferred**.
 
+**Current instruction: do not start implementation.** The founder explicitly stopped any potential transition from planning into building. Only discussion/research notes are being preserved. The older branches below record unresolved design details, not an active work queue.
+
+## Latest answers and overrides (Q12-Q15)
+
+- Q12: Sharing with other people is essential. The founder delegates choosing suitable formats/setup; do not ask them to resolve infrastructure terminology. No hosting or authentication system is selected.
+- Q13: Keep authoring as simple text/files and existing tools. Do not build a Google Docs replacement.
+- Q14: Three requested simulated creator perspectives have been gathered; see creator-perspectives.md. These are hypotheses, not real user research or binding design choices.
+- Q15: Website-first with early print exploration is acceptable. Include how book output could work; multiple complete implementations are unnecessary.
+- OpenSpec: raised as a possibility, not requested for installation. Recommendation is to retain simple Markdown planning and reconsider it for later concrete changes.
+- No application code, visual prototype, deployment, or autonomous development has been started. A future explicit implementation request is needed.
+
 ## Settled foundations
 
 | Decision | Status | Basis |
@@ -53,11 +64,11 @@ Updated 2026-09-19. Status terms: **confirmed**, **tentative**, **proposed**, **
    - Open: first agent milestone, review cadence, resource limits, and server environment.
    - Downstream: scheduling and actual deployment. Neither has been requested yet.
 
-## Next interview round (proposed; unanswered)
+## Previous interview round (answered above; retained for context)
 
 - Q12: May optional protected sharing require a server, while ordinary public collections remain easy to host?
 - Q13: Is agent-assisted file editing sufficient initially, or must a nontechnical creator manage everything in a graphical interface?
 - Q14: Which presentation directions should the initial prototypes compare, such as illustrated memoir, intimate family album, or exploratory life archive?
 - Q15: Must printable book output work in the first prototype, or should it follow the website/design proof?
 
-These are decisions for the founder. Research can clarify feasibility but cannot supply their preferences. Recompute the next frontier after each answer; do not interpret unanswered proposals as agreement.
+These questions have now been answered as recorded above. Do not ask them again. Remaining technical details can be investigated when future work is authorized; no further questionnaire or implementation is active now.

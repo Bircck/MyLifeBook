@@ -2,7 +2,9 @@
 
 ## Current state
 
-Discovery is ongoing. This repository contains a brief, decision history, research, and proposed experiments. There is no application, active server deployment, scheduled automation, or agreed final architecture.
+**Do not start development now.** The founder explicitly requested this on 2026-09-19. Notes and proposed tasks are not authorization to implement. Wait for a future explicit request before building prototypes, application code, or deployments.
+
+Discovery has enough direction for a first-prototype brief. This repository contains that brief, decision history, research, simulated creator perspectives, and proposed experiments. There is no application, active server deployment, scheduled automation, or agreed final architecture.
 
 The founder wants an agent to improve the concept through research, feature experiments, and design iterations. Work should produce inspectable progress rather than unbounded feature accumulation.
 
@@ -26,4 +28,6 @@ Inspect the actual environment rather than asking the founder to guess installed
 
 ## Decisions still needed
 
-See decisions.md. Do not treat the original interviewer's recommendations as settled scope. In particular: one fixed writing style, mandatory Markdown/Obsidian, mandatory chapters, a PDF in the first milestone, and static editions as the only sharing model were not agreed.
+See decisions.md. Do not reopen Q12-Q15: sharing implementation was delegated, authoring should remain simple, simulated creator input has been gathered, and website-first with early print exploration was accepted. A fixed writing style, mandatory contributor Markdown/Obsidian, mandatory chapters, full book production in the first milestone, and static editions as the only sharing model were not agreed.
+
+For a later implementation assignment, start with first-prototype.md. OpenSpec is optional; the founder did not request installation. Do not turn an exploratory brief into specifications asserting nonexistent behavior is implemented.

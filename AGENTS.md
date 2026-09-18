@@ -6,6 +6,7 @@ Read README.md, docs/product-brief.md, docs/decisions.md, and docs/agent-handoff
 
 - This is an open-source, locally usable project with flat, simple, portable information. Do not silently turn it into a hosted subscription service.
 - Creator choices govern structure, selection, and editorial treatment. Chapters, dates, life stages, interviews, and Obsidian conventions are not compulsory authoring formats.
+- Keep authoring simple: ordinary text/files and existing tools. The founder explicitly does not want a Google Docs replacement.
 - Distinguish confirmed user direction, tentative acceptance, agent recommendations, and unresolved decisions. Never promote a suggestion to a requirement without evidence.
 - Astro is a candidate favored by the founder. Evaluate before locking architecture; Starlight is not chosen.
 - Preserve source material and source attribution when exploring imports or editorial transformations. Do not fabricate biographical facts.
@@ -16,6 +17,7 @@ Read README.md, docs/product-brief.md, docs/decisions.md, and docs/agent-handoff
 - Research comparable products and good websites when useful. Save dated primary-source links and distinguish findings from inferences.
 - Consider available frontend/design skills for interface work and use relevant visual references. The founder values these strongly without mandating one particular skill or design system.
 - Compare meaningful design alternatives using the same sample content. Evaluate reading, imagery, accessibility, mobile layout, and the individuality of each life; avoid defaulting to a documentation-site appearance.
+- Prototype an uncertainty, not every feature in several versions. A focused alternate layout and one print chapter may be enough. Simulated agent personas are hypotheses, never real user research.
 - Do not copy third-party content or assets without appropriate rights.
 
 ## Implementation and verification
@@ -29,4 +31,4 @@ Read README.md, docs/product-brief.md, docs/decisions.md, and docs/agent-handoff
 
 ## Current scope
 
-The repository records an ongoing discovery interview. It does not authorize deployment to a server, publication of real personal content, spending money, or an endless unattended run. Future task instructions determine which research or implementation milestone is active.
+The founder explicitly instructed on 2026-09-19 not to start the project now. This repository preserves planning only. Do not implement application code, construct prototypes, deploy, or start autonomous work until a later explicit request. Saving the discussion to GitHub is authorized. Future task instructions determine when any implementation milestone becomes active.
