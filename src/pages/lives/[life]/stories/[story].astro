@@ -1,0 +1,16 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import { getLibrary } from '../../../../lib/content';
+export function getStaticPaths() { return getLibrary().lives.flatMap(life => life.stories.map((story, index) => ({ params: { life: life.id, story: story.id }, props: { life, story, next: life.stories[(index + 1) % life.stories.length] } }))); }
+const { life, story, next } = Astro.props;
+---
+<Base title={`${story.title} — ${life.name}`} description={story.excerpt} theme={life.theme}>
+  <div class="story-topline wrap"><a href={`/lives/${life.id}/#stories`}>← All of {life.name.split(' ')[0]}'s stories</a><a href={`/lives/${life.id}/collection/?stories=${story.id}`}>Keep this story ↗</a></div>
+  <article class="story-article">
+    <header class="story-title"><p class="eyebrow">{story.category || 'A story'} <span class="dot">·</span> {story.date || 'A moment remembered'} <span class="dot">·</span> {story.readingMinutes} min read</p><h1>{story.title}</h1><p class="story-deck">{story.excerpt}</p></header>
+    {story.imageUrl && <figure class="story-hero-image wrap"><img src={story.imageUrl} alt={story.imageAlt} width="1400" height="900" /><figcaption>{story.imageCaption}</figcaption></figure>}
+    <div class="prose story-body" set:html={story.html} />
+    {story.source && <aside class="source-note"><p class="eyebrow">A note on this story</p><p>{story.source.label}</p><p>{story.source.treatment}</p></aside>}
+  </article>
+  <section class="story-end wrap"><div><p class="eyebrow">Stay a little longer</p><h2>{next && next.id !== story.id ? 'There’s another story.' : 'A story worth keeping.'}</h2></div>{next && next.id !== story.id ? <a class="text-link" href={`/lives/${life.id}/stories/${next.id}/`}>{next.title}<span class="round-arrow" aria-hidden="true">↗</span></a> : <a class="text-link" href={`/lives/${life.id}/collection/`}>Make a little book ↗</a>}</section>
+</Base>

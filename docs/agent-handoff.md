@@ -2,9 +2,9 @@
 
 ## Current state
 
-**Do not start development now.** The founder explicitly requested this on 2026-09-19. Notes and proposed tasks are not authorization to implement. Wait for a future explicit request before building prototypes, application code, or deployments.
+**Development is now authorized.** The founder's subsequent request on 2026-09-19 explicitly supersedes the earlier pause. Continue from [progress.md](progress.md), which records the active experiment and verified features. Use a development branch, bounded subagents, regular checkpoints, and local previews; no purchases or deployment to the founder's server.
 
-Discovery has enough direction for a first-prototype brief. This repository contains that brief, decision history, research, simulated creator perspectives, and proposed experiments. There is no application, active server deployment, scheduled automation, or agreed final architecture.
+Discovery supplied enough direction for a first experiment. Earlier notes below are historical proposals; use the current progress file for application state. No server deployment or scheduled automation is authorized by this session.
 
 The founder wants an agent to improve the concept through research, feature experiments, and design iterations. Work should produce inspectable progress rather than unbounded feature accumulation.
 

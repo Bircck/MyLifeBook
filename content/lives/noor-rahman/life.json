@@ -1,0 +1,20 @@
+{
+  "id": "noor-rahman",
+  "name": "Noor Rahman",
+  "subtitle": "Notes from the middle of becoming",
+  "years": "17 · work in progress",
+  "intro": "A photocopied zine, a scratched skateboard, and a playlist for the bus home. Keeping the parts that feel like me.",
+  "description": "A fictional teenager’s collection in her own imagined voice: making things, starting over, and paying attention to life as it happens.",
+  "hero": "image.jpg",
+  "heroAlt": "A turquoise skateboard with pink flamingos and pale wheels in front of a wooden fence",
+  "heroCaption": "An illustrative photograph. Noor, her words, and the events here are fictional.",
+  "theme": "electric",
+  "quote": "It doesn’t have to be finished to be worth keeping.",
+  "quoteAttribution": "Noor’s fictional notebook",
+  "facts": [
+    { "label": "Making", "value": "Issue two, eventually" },
+    { "label": "Learning", "value": "To land and try again" },
+    { "label": "Listening", "value": "On the last bus home" }
+  ],
+  "storyOrder": ["the-first-issue", "five-seconds-of-balance", "songs-for-the-bus"]
+}

@@ -31,4 +31,4 @@ Read README.md, docs/product-brief.md, docs/decisions.md, and docs/agent-handoff
 
 ## Current scope
 
-The founder explicitly instructed on 2026-09-19 not to start the project now. This repository preserves planning only. Do not implement application code, construct prototypes, deploy, or start autonomous work until a later explicit request. Saving the discussion to GitHub is authorized. Future task instructions determine when any implementation milestone becomes active.
+The founder's subsequent request on 2026-09-19 explicitly authorizes an extended autonomous implementation session, superseding the earlier planning-only pause. Build, research, inspect, test, and improve on a development branch; use bounded subagents and commit/push coherent checkpoints. Do not purchase services or deploy to the founder's server. Preserve the earlier pause as discovery history. Read `docs/progress.md` to resume active work.

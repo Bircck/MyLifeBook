@@ -2,9 +2,20 @@
 
 Updated 2026-09-19. Status terms: **confirmed**, **tentative**, **proposed**, **open**, **deferred**.
 
-**Current instruction: do not start implementation.** The founder explicitly stopped any potential transition from planning into building. Only discussion/research notes are being preserved. The older branches below record unresolved design details, not an active work queue.
+**Current instruction: implementation authorized.** A subsequent request on 2026-09-19 supersedes the earlier pause and authorizes extended autonomous development, local previews, bounded subagents, and regular commits/pushes. No purchases or deployment to the founder's server. Earlier statements below record discovery history; current experiments and evidence live in [progress.md](progress.md).
 
 ## Latest answers and overrides (Q12-Q15)
+
+### Implementation experiments (subsequent go-ahead)
+
+- **Confirmed authorization:** active local development and reviewable GitHub checkpoints, no server deployment or purchases.
+- **Agent choice, revisable:** Astro 7 custom static presentation; simple JSON profiles and Markdown stories, no CMS/database/Starlight.
+- **Implemented experiment:** explicit public story flags plus edition allowlists, selected assets, sanitized Markdown, source notes. Profile metadata is shared across that life's editions.
+- **Design experiment:** memoir primary, photo album alternative using identical stories. Four entirely fictional lives demonstrate optional dates and different themes.
+- **Print experiment:** selected A5 collection with cover, contents, photo openings and reading pages; inspected eight-page proof. Not a professional book-production guarantee.
+- **Source staging experiment:** Markdown and DOCX conversion preserves originals and stages re-import conflicts. No automatic public publication.
+
+The bullets below describe the earlier discovery checkpoint; they do not override the subsequent authorization.
 
 - Q12: Sharing with other people is essential. The founder delegates choosing suitable formats/setup; do not ask them to resolve infrastructure terminology. No hosting or authentication system is selected.
 - Q13: Keep authoring as simple text/files and existing tools. Do not build a Google Docs replacement.

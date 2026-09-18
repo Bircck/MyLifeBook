@@ -1,0 +1,38 @@
+---
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/400-italic.css';
+import '@fontsource/source-sans-3/400.css';
+import '@fontsource/source-sans-3/600.css';
+import '../../../styles/print.css';
+import { getLibrary } from '../../../lib/content';
+export function getStaticPaths() { return getLibrary().lives.map(life => ({ params: { life: life.id }, props: { life } })); }
+const { life } = Astro.props;
+---
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>{life.name} — A lifebook to keep</title><meta name="robots" content="noindex" /></head>
+<body>
+  <div class="print-toolbar"><a href={`/lives/${life.id}/collection/`}>← Choose stories</a><p>A5 · Save as PDF · Turn off browser headers and footers</p><button type="button" id="print-book">Print this book ↗</button></div>
+  <p class="print-warning" role="status" hidden></p>
+  <main class="book-pages">
+    <section class="book-cover book-page"><p class="book-eyebrow">A lifebook</p><h1>{life.name}</h1><p class="cover-years">{life.years}</p><img src={life.heroUrl} alt={life.heroAlt} width="900" height="600" /><p class="cover-line">A few things to remember.</p><p class="book-eyebrow">Stories, photographs &amp; the spaces in between</p></section>
+    <section class="book-contents book-page"><p class="book-eyebrow">Collected with care</p><h2>In these pages</h2><p class="contents-intro">{life.intro}</p><ol>{life.stories.map(story => <li data-contents-id={story.id}><a href={`#print-${story.id}`}>{story.title}</a></li>)}</ol><div class="book-colophon"><p>Created with MyLifeBook, an open-source home for life stories.</p><p>This is a fictional demonstration. People and stories are invented. Photographs are illustrative CC0 images, not records of these people. Photo sources are recorded in the project’s content/ASSET-LICENSES.md.</p><p class="selection-label"></p></div></section>
+    <div class="print-stories">{life.stories.map(story => <article class="book-story" id={`print-${story.id}`} data-print-id={story.id}><section class="chapter-opening book-page"><header><p class="book-eyebrow">{story.category}{story.date ? ` · ${story.date}` : ''}</p><h2>{story.title}</h2></header>{story.imageUrl && <figure><img src={story.imageUrl} alt={story.imageAlt} width="900" height="550" /><figcaption>{story.imageCaption}</figcaption></figure>}<p class="chapter-deck">{story.excerpt}</p><p class="book-eyebrow chapter-signature">From the lifebook of {life.name}</p></section><section class="chapter-reading book-page"><p class="running-title">{story.title}</p><div class="book-prose" set:html={story.html} />{story.source && <aside class="book-source">{story.source.label} · {story.source.treatment}</aside>}<footer>{life.name} <span>MyLifeBook</span></footer></section></article>)}</div>
+  </main>
+  <script>
+    const param = new URLSearchParams(location.search).get('stories');
+    const all = [...document.querySelectorAll<HTMLElement>('[data-print-id]')];
+    const requested = param === null ? all.map(item => item.dataset.printId!) : [...new Set(param.split(',').filter(Boolean))];
+    const ids = requested.filter(id => all.some(item => item.dataset.printId === id));
+    const unknown = requested.filter(id => !ids.includes(id));
+    const warning = document.querySelector<HTMLElement>('.print-warning')!;
+    const printButton = document.querySelector<HTMLButtonElement>('#print-book')!;
+    for (const article of all) article.hidden = !ids.includes(article.dataset.printId!);
+    const contents = [...document.querySelectorAll<HTMLElement>('[data-contents-id]')];
+    for (const row of contents) row.hidden = !ids.includes(row.dataset.contentsId!);
+    for (const id of ids) { document.querySelector('.print-stories')!.append(all.find(item => item.dataset.printId === id)!); const row = contents.find(item => item.dataset.contentsId === id)!; row.parentElement!.append(row); }
+    document.querySelector('.selection-label')!.textContent = `${ids.length} selected ${ids.length === 1 ? 'story' : 'stories'}.`;
+    if (unknown.length || !ids.length) { warning.hidden = false; warning.textContent = !ids.length ? 'No available stories were selected. Return to choose your stories.' : 'Some requested stories are not in this edition. Only available stories are shown.'; }
+    if (!ids.length) printButton.disabled = true;
+    printButton.addEventListener('click', () => window.print());
+  </script>
+</body></html>

@@ -1,8 +1,8 @@
 # Future prototype discussion
 
-**Planning only. The founder explicitly instructed on 2026-09-19 not to start the project now. No implementation, prototype construction, deployment, or autonomous development is currently authorized.**
+**Historical prototype brief, now activated by the founder's subsequent implementation request on 2026-09-19.** The earlier planning-only pause is superseded; see progress.md for active scope and evidence. Deployment to the founder's server is still excluded.
 
-The following records ideas for a later assignment; it is not an active task.
+The following records the original suggestions; implementation choices remain experiments rather than retroactive user requirements.
 
 ## Possible first result
 

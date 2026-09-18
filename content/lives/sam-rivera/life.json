@@ -1,0 +1,20 @@
+{
+  "id": "sam-rivera",
+  "name": "Sam Rivera",
+  "subtitle": "Home is something we make",
+  "years": "42 · a few places later",
+  "intro": "Recipes with no exact measurements, friends in several cities, and a table that travels from home to home.",
+  "description": "A fictional adult life still unfolding, collected through food, moves, friendship, and the small work of belonging somewhere.",
+  "hero": "image.jpg",
+  "heroAlt": "A golden loaf on a white cloth beside butter and a knife",
+  "heroCaption": "An illustrative photograph. Sam and every memory in this collection are fictional.",
+  "theme": "warm",
+  "quote": "Start with the onions. Somebody will arrive.",
+  "quoteAttribution": "A saying from Sam’s fictional kitchen",
+  "facts": [
+    { "label": "House rule", "value": "Bring yourself; bring a container" },
+    { "label": "Kept through every move", "value": "The blue cooking pot" },
+    { "label": "Best kind of plan", "value": "An extra place at dinner" }
+  ],
+  "storyOrder": ["the-sunday-pot", "boxes-marked-kitchen", "one-more-place"]
+}

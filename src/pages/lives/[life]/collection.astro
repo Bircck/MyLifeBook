@@ -1,0 +1,65 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getLibrary } from '../../../lib/content';
+export function getStaticPaths() { return getLibrary().lives.map(life => ({ params: { life: life.id }, props: { life } })); }
+const { life } = Astro.props;
+---
+<Base title={`A book to keep — ${life.name}`} theme={life.theme}>
+  <section class="collection-heading wrap"><a class="eyebrow" href={`/lives/${life.id}/`}>← {life.name}'s lifebook</a><h1>A few stories.<br /><em>Something to keep.</em></h1><p>Choose the stories that belong together. Put them in your order, then make a little book to print or save as a PDF.</p></section>
+  <div class="collection-layout wrap" data-life={life.id}>
+    <section aria-label="Choose and arrange stories">
+      <div class="selection-tools"><p>Select stories, then use the arrows to arrange them.</p><button id="select-all" type="button">Select all</button></div>
+      <ol class="selection-list">{life.stories.map((story, index) => <li class="selection-row" data-story-id={story.id}><input type="checkbox" id={`select-${story.id}`} value={story.id} checked aria-labelledby={`label-${story.id}`} />{story.imageUrl && <img src={story.imageUrl} alt="" width="68" height="72" />}<label for={`select-${story.id}`}><h2 id={`label-${story.id}`}>{story.title}</h2><p>{story.category} · {story.readingMinutes} min read</p></label><div class="order-buttons"><button type="button" data-direction="up" aria-label={`Move ${story.title} earlier`} disabled={index === 0}>↑</button><button type="button" data-direction="down" aria-label={`Move ${story.title} later`} disabled={index === life.stories.length - 1}>↓</button></div></li>)}</ol>
+      <p class="helper-note">Your selection changes this book only. Every story on this website is already public. To publish a separate edition containing only chosen stories and photographs, <a href="/making/#sharing">use an edition file</a>.</p>
+      <noscript><p>Story selection needs JavaScript. <a href={`/lives/${life.id}/print/`}>Open the complete printable collection instead.</a></p></noscript>
+    </section>
+    <aside class="book-preview" aria-label="Your book preview">
+      <div class="mini-cover"><p class="eyebrow">A lifebook</p><h2>{life.name}</h2><img src={life.heroUrl} alt="" width="260" height="180" /><p>A few things to remember.</p><p class="eyebrow">{life.years || 'Stories so far'}</p></div>
+      <p class="selection-status" aria-live="polite"></p>
+      <a class="button" id="preview-book" href={`/lives/${life.id}/print/`}>Open print preview <span aria-hidden="true">↗</span></a>
+      <button class="button button-secondary" id="copy-selection" type="button">Copy selection link</button>
+      <p class="collection-message" aria-live="polite"></p>
+      <p class="helper-note">A5 pages, with a cover, contents and photograph captions. Use your browser’s Print → Save as PDF. Review the preview before printing.</p>
+    </aside>
+  </div>
+  <script>
+    const list = document.querySelector<HTMLOListElement>('.selection-list')!;
+    const life = document.querySelector<HTMLElement>('[data-life]')!.dataset.life!;
+    const preview = document.querySelector<HTMLAnchorElement>('#preview-book')!;
+    const copy = document.querySelector<HTMLButtonElement>('#copy-selection')!;
+    const rows = () => [...list.querySelectorAll<HTMLElement>('.selection-row')];
+    const query = new URLSearchParams(location.search).get('stories');
+    if (query !== null) {
+      const order = query.split(',');
+      for (const row of rows()) row.querySelector<HTMLInputElement>('input')!.checked = order.includes(row.dataset.storyId!);
+      for (const id of order) { const row = rows().find(row => row.dataset.storyId === id); if (row) list.append(row); }
+    }
+    function update() {
+      const all = rows();
+      const chosen = all.filter(row => row.querySelector<HTMLInputElement>('input')!.checked).map(row => row.dataset.storyId!);
+      all.forEach((row, index) => { row.querySelector<HTMLButtonElement>('[data-direction="up"]')!.disabled = index === 0; row.querySelector<HTMLButtonElement>('[data-direction="down"]')!.disabled = index === all.length - 1; });
+      document.querySelector('.selection-status')!.textContent = `${chosen.length} ${chosen.length === 1 ? 'story' : 'stories'} in your book`;
+      preview.href = `/lives/${life}/print/?stories=${chosen.join(',')}`;
+      preview.setAttribute('aria-disabled', String(!chosen.length));
+      copy.disabled = !chosen.length;
+      return chosen;
+    }
+    list.addEventListener('change', update);
+    list.addEventListener('click', e => {
+      const button = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-direction]');
+      if (!button) return;
+      const row = button.closest<HTMLElement>('.selection-row')!;
+      if (button.dataset.direction === 'up' && row.previousElementSibling) list.insertBefore(row, row.previousElementSibling);
+      if (button.dataset.direction === 'down' && row.nextElementSibling) list.insertBefore(row.nextElementSibling, row);
+      update(); button.focus();
+    });
+    document.querySelector('#select-all')!.addEventListener('click', () => { rows().forEach(row => row.querySelector<HTMLInputElement>('input')!.checked = true); update(); });
+    preview.addEventListener('click', e => { if (preview.getAttribute('aria-disabled') === 'true') { e.preventDefault(); document.querySelector('.collection-message')!.textContent = 'Choose at least one story to make a book.'; } });
+    copy.addEventListener('click', async () => {
+      const url = new URL(`/lives/${life}/collection/`, location.origin); url.searchParams.set('stories', update().join(','));
+      try { await navigator.clipboard.writeText(url.href); document.querySelector('.collection-message')!.textContent = 'Selection link copied.'; }
+      catch { document.querySelector('.collection-message')!.textContent = `Copy this link: ${url.href}`; }
+    });
+    update();
+  </script>
+</Base>

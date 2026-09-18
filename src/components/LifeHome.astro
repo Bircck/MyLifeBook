@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import LifeNav from './LifeNav.astro';
+import StoryCard from './StoryCard.astro';
+import type { Life } from '../lib/content';
+interface Props { life: Life; }
+const { life } = Astro.props;
+const first = life.stories[0];
+---
+<Base title={life.name} description={life.description} theme={life.theme}>
+  <section class="life-hero wrap">
+    <div class="hero-copy">
+      <p class="eyebrow hero-eyebrow"><span class="small-line"></span> The lifebook of</p>
+      <h1>{life.name}</h1>
+      <p class="life-years">{life.years}</p>
+      <p class="hero-intro">{life.intro}</p>
+      {first && <a class="text-link" href={`/lives/${life.id}/stories/${first.id}/`}>Begin with a story <span class="round-arrow" aria-hidden="true">↗</span></a>}
+      <p class="fiction-label">A fictional life. Very human stories.</p>
+    </div>
+    <figure class="hero-photo">
+      <img src={life.heroUrl} alt={life.heroAlt} width="1400" height="1000" fetchpriority="high" />
+      <figcaption><span>{life.heroCaption}</span><span class="photo-mark" aria-hidden="true">↗</span></figcaption>
+    </figure>
+  </section>
+  <LifeNav life={life} />
+  <section class="stories-section wrap" id="stories" aria-labelledby="stories-heading">
+    <div class="section-heading"><div><p class="eyebrow">Collected with care</p><h2 id="stories-heading">The things we remember.</h2></div><p>No life fits in a straight line.<br />Start wherever you like.</p></div>
+    <div class="story-grid">{life.stories.map((story, index) => <StoryCard story={story} index={index} featured={index === 0} />)}</div>
+  </section>
+  {life.quote && <section class="quote-section"><div class="wrap quote-inner"><span class="quote-symbol" aria-hidden="true">“</span><blockquote><p>{life.quote}</p><cite>{life.quoteAttribution || life.name}</cite></blockquote><span class="drawn-star" aria-hidden="true">✳</span></div></section>}
+  <section class="about-life wrap" id="about">
+    <div><p class="eyebrow">More than dates on a page</p><h2>A little about<br /><em>{life.name.split(' ')[0]}.</em></h2></div>
+    <div><p class="about-description">{life.description}</p><dl class="life-facts">{life.facts.map(fact => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl><a class="text-link" href={`/lives/${life.id}/collection/`}>Keep a few stories in a book <span aria-hidden="true">↗</span></a></div>
+  </section>
+</Base>

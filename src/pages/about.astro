@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import { readFileSync } from 'node:fs';
+import { marked } from 'marked';
+import { getMediaAssets } from '../lib/content';
+const assets = getMediaAssets().map(asset => asset.routePath.replace('/', '/media/'));
+const records = readFileSync('content/ASSET-LICENSES.md', 'utf8').split('\n').filter(line => line.startsWith('| `') && assets.some(asset => line.includes('`' + asset + '`')));
+const credits = ['| File | Photograph / creator | Source | Publication date |','| --- | --- | --- | --- |', ...records].join('\n');
+---
+<Base title="About these collections"><article class="wrap guide-page prose"><p class="eyebrow">Made to be kept</p><h1>A home for<br /><em>human stories.</em></h1><p>MyLifeBook is an open-source experiment in telling a life through stories, photographs, and small details. It is designed to run locally, keep its information in ordinary files, and make a useful website or printable collection.</p><h2>These lives are fictional</h2><p>The people in this demonstration are invented. Their stories, dates, relationships and quoted words were composed for this project. None are testimony, a real family archive, or user research.</p><p>The photographs are illustrative. They set a mood without claiming to document an invented person’s life. These credits list only photographs included in this edition.</p><h2>Open by design</h2><p>The software is available under the MIT license. Your own writing and photographs remain yours. This project has no account, subscription, analytics or external font requests.</p><p><a href="https://github.com/Bircck/MyLifeBook/tree/codex/first-living-edition">Explore the project on GitHub ↗</a></p><h2>Photographs in this edition</h2><p>These photographs are listed on Wikimedia Commons under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>. They originated on Unsplash before its June 2017 license change. The complete provenance and derivative records are in the project’s <code>content/ASSET-LICENSES.md</code>.</p><div class="asset-credits" set:html={marked.parse(credits)} /></article></Base>

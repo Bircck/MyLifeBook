@@ -1,20 +1,21 @@
-# Local tools and build output
 node_modules/
 dist/
+editions/
 .astro/
-.cache/
-coverage/
-*.log
-.DS_Store
-Thumbs.db
-
-# Secrets and local-only personal material
+artifacts/
+test-results/
+playwright-report/
 .env
 .env.*
 !.env.example
+content/private/
+/imports/
+*.log
+.cache/
+coverage/
+.DS_Store
+Thumbs.db
 private/
 personal/
 local-content/
 exports/
-
-# This is a convenience, not a substitute for reviewing staged files.

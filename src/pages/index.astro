@@ -1,0 +1,7 @@
+---
+import LifeHome from '../components/LifeHome.astro';
+import { getLibrary } from '../lib/content';
+const library = getLibrary();
+const life = library.lives.find(life => life.id === 'ellen-falk') || library.lives[0];
+---
+<LifeHome life={life} />

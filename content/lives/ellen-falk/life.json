@@ -1,0 +1,20 @@
+{
+  "id": "ellen-falk",
+  "name": "Ellen Falk",
+  "subtitle": "A life with room for others",
+  "years": "1938–2024",
+  "intro": "She knew the long way home, how to make soup for one more person, and when a thing was worth mending.",
+  "description": "A fictional life on the Danish coast, remembered through ordinary things: walks, a kitchen table, a basket of repairs, and a garden that never quite followed the plan.",
+  "hero": "coast.jpg",
+  "heroAlt": "Wind-shaped pale dunes and a broad sandy beach beneath large clouds at Hvide Sande",
+  "heroCaption": "An illustrative coastal photograph. All people and memories in this collection are fictional.",
+  "theme": "memoir",
+  "quote": "We have time. Take the long way.",
+  "quoteAttribution": "A favourite saying in Ellen’s fictional story",
+  "facts": [
+    { "label": "At home", "value": "The Danish coast" },
+    { "label": "Usually carrying", "value": "A useful piece of string" },
+    { "label": "Always making", "value": "Room at the table" }
+  ],
+  "storyOrder": ["the-long-way-home", "a-table-for-everyone", "the-mending-basket", "postcards-from-elsewhere", "what-the-garden-knows"]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "milo-chen",
+  "name": "Milo Chen",
+  "subtitle": "Eight years of excellent questions",
+  "years": "Age 8 · still collecting",
+  "intro": "Keeper of interesting stones. Inspector of puddles. Currently investigating whether snails have favourite places.",
+  "description": "A fictional childhood collection, told through tiny discoveries and unfinished questions. A life book can begin while most of the life is still ahead.",
+  "hero": "image.jpg",
+  "heroAlt": "Close-up of dark green leaves with delicate pale pink and white veins",
+  "heroCaption": "An illustrative nature photograph. Milo and these memories are entirely fictional.",
+  "theme": "playful",
+  "quote": "Can we look a bit closer?",
+  "quoteAttribution": "Milo, in this fictional collection",
+  "facts": [
+    { "label": "Current collection", "value": "Things found at foot level" },
+    { "label": "Best equipment", "value": "A magnifying glass" },
+    { "label": "Still wondering", "value": "Almost everything" }
+  ],
+  "storyOrder": ["the-pocket-museum", "the-snail-rescue", "questions-for-the-moon"]
+}

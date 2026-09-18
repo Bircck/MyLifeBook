@@ -1,0 +1,13 @@
+---
+import type { Life } from '../lib/content';
+interface Props { life: Life; active?: string; }
+const { life, active = 'stories' } = Astro.props;
+---
+<div class="life-nav wrap">
+  <nav aria-label={`${life.name}'s collection`}>
+    <a href={`/lives/${life.id}/#stories`} aria-current={active === 'stories' ? 'page' : undefined}>The stories <span>{life.stories.length.toString().padStart(2, '0')}</span></a>
+    <a href={`/lives/${life.id}/album/`} aria-current={active === 'album' ? 'page' : undefined}>The photo album</a>
+    <a href={`/lives/${life.id}/#about`}>A little about {life.name.split(' ')[0]}</a>
+  </nav>
+  <a class="book-link" href={`/lives/${life.id}/collection/`}><svg width="16" height="18" viewBox="0 0 16 18" fill="none" aria-hidden="true"><rect x="2" y="1" width="12" height="16" rx="1" stroke="currentColor"/><path d="M5 1v16M8 5h3M8 8h3" stroke="currentColor"/></svg> A book to keep <span aria-hidden="true">↗</span></a>
+</div>

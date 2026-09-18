@@ -1,0 +1,13 @@
+---
+import Base from '../../../layouts/Base.astro';
+import LifeNav from '../../../components/LifeNav.astro';
+import { getLibrary } from '../../../lib/content';
+export function getStaticPaths() { return getLibrary().lives.map(life => ({ params: { life: life.id }, props: { life } })); }
+const { life } = Astro.props;
+---
+<Base title={`${life.name} — The photo album`} theme={life.theme}>
+  <section class="album-heading wrap"><p class="eyebrow">{life.name} · The same life, another way in</p><h1>Little windows<br /><em>into a life.</em></h1><p>Sometimes a photograph is where a story begins.</p></section>
+  <LifeNav life={life} active="album" />
+  <section class="album-grid wrap" aria-label="Photographs and their stories">{life.stories.map((story, index) => <a class="album-print" href={`/lives/${life.id}/stories/${story.id}/`}><figure>{story.imageUrl ? <img src={story.imageUrl} alt={story.imageAlt} width="800" height="650" loading="lazy" /> : <div class="text-story-art">{story.title.slice(0, 1)}</div>}<figcaption><span class="album-number">{String(index + 1).padStart(2, '0')}</span><div><h2>{story.title}</h2><p>{story.date || story.category}</p></div><span aria-hidden="true">↗</span></figcaption></figure></a>)}</section>
+  <p class="album-note wrap">Illustrative photographs accompany these fictional stories. <a href="/about/">Photo credits &amp; provenance ↗</a></p>
+</Base>

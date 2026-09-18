@@ -1,0 +1,7 @@
+---
+import LifeHome from '../../../components/LifeHome.astro';
+import { getLibrary } from '../../../lib/content';
+export function getStaticPaths() { return getLibrary().lives.map(life => ({ params: { life: life.id }, props: { life } })); }
+const { life } = Astro.props;
+---
+<LifeHome life={life} />

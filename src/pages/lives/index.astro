@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getLibrary } from '../../lib/content';
+const { lives } = getLibrary();
+---
+<Base title="Every life has its own shape">
+  <section class="wrap explore-intro"><p class="eyebrow">A small library of lives</p><h1>Every life has<br /><em>its own shape.</em></h1><p>Growing up, finding a way, remembering someone.<br />Four fictional collections. A few ways to tell a life.</p></section>
+  <section class="wrap lives-grid" aria-label="Fictional life collections">{lives.map(life => <a class="life-tile" href={`/lives/${life.id}/`} data-theme={life.theme}><img src={life.heroUrl} alt={life.heroAlt} width="700" height="500" /><div><p class="eyebrow">{life.years || 'A life in progress'} · {life.stories.length} stories</p><h2>{life.name}<span aria-hidden="true">↗</span></h2><p>{life.subtitle}</p></div></a>)}</section>
+</Base>
