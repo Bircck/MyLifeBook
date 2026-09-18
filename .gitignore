@@ -1,6 +1,6 @@
 node_modules/
 dist/
-editions/
+/editions/
 .astro/
 artifacts/
 test-results/

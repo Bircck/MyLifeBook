@@ -1,0 +1,11 @@
+{
+  "id": "ellen-garden",
+  "title": "Close to home",
+  "description": "Two fictional stories about paying attention: to a garden, and to the path home. A deliberately small, differently ordered selection.",
+  "selections": [
+    {
+      "life": "ellen-falk",
+      "stories": ["what-the-garden-knows", "the-long-way-home"]
+    }
+  ]
+}

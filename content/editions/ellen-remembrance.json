@@ -1,0 +1,11 @@
+{
+  "id": "ellen-remembrance",
+  "title": "Remembering Ellen",
+  "description": "Three fictional memories of the space Ellen made for others. A small collection for reading together or keeping in print.",
+  "selections": [
+    {
+      "life": "ellen-falk",
+      "stories": ["the-long-way-home", "a-table-for-everyone", "the-mending-basket"]
+    }
+  ]
+}
